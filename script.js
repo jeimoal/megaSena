@@ -35,7 +35,7 @@ init: () => {
 luckyBet: () => {
 let matrix = document.querySelector('#luckyBet');
 let matrixTxt;
-let matrixRep;
+//let matrixRep;
 while (betNum.matrix.length != 6) {
 	betNum.dozen = Math.floor(Math.random() * 10);
 	betNum.unit = Math.floor(Math.random() * 10);
