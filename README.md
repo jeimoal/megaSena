@@ -1,4 +1,4 @@
-# GERADOR DE NÚMERO ALEATÓRIO DA MEGA SENA
+# GERADOR DE NÚMEROS ALEATÓRIOS DA MEGA SENA
 
 Gera seis número aleatórios, para utilizar em sua aposta vencedora ^^
 
