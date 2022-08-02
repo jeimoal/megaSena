@@ -32,7 +32,7 @@ init: () => {
 	luckyBetCont.appendChild(luckyNum);
 },
 
-//generate the lucky numbers and display at the DOM
+//generates the lucky numbers and displays on the screen
 luckyBet: () => {
 let matrix = document.querySelector('#luckyBet');
 
