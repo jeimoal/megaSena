@@ -1,6 +1,6 @@
 let betNum = {
-dozen: null, //create html element
-unit: null, //create html element
+dozen: null, //receives first number
+unit: null, //receives second number
 matrix: [], //stores the numbers
 
 init: () => {
@@ -8,6 +8,7 @@ init: () => {
 	body = document.querySelector('body');
 	divW = document.createElement('div');
 	divW.setAttribute('id','betWrapper');
+	divW.setAttribute('class','default');
 	body.appendChild(divW);
 
 	//create lucky container
@@ -17,12 +18,12 @@ init: () => {
 
 	//create lucky button
 	luckyBtn = document.createElement('button');
-	luckyBtn.setAttribute('id', 'luckyBtn');
-	luckyBtn.textContent = "Gerar números da sorte";
+	luckyBtn.setAttribute('class', 'luckyBtn');
+	luckyBtn.textContent = "gerar números da sorte";
 	luckyBetCont.appendChild(luckyBtn);
 	luckyBtn.addEventListener('click', betNum.luckyBet);
 
-	//create lucky num div
+	//create lucky num div and display text
 	luckyNum = document.createElement('div');
 	luckyTxt = document.createElement('p')
 	luckyNum.setAttribute('id', 'luckyNum');
@@ -31,24 +32,23 @@ init: () => {
 	luckyBetCont.appendChild(luckyNum);
 },
 
-//generate lucky bet numbers
+//generate the lucky numbers and display at the DOM
 luckyBet: () => {
 let matrix = document.querySelector('#luckyBet');
-let matrixTxt;
-//let matrixRep;
+
 while (betNum.matrix.length != 6) {
 	betNum.dozen = Math.floor(Math.random() * 10);
 	betNum.unit = Math.floor(Math.random() * 10);
-	concat = `${betNum.dozen}${betNum.unit} `;
+	concat = ` ${betNum.dozen}${betNum.unit}`;
 
 	if(concat > 0 && concat <=60) {
 		betNum.matrix.unshift(concat);
 	}
 	matrixTxt = betNum.matrix;
-	//matrixRep = matrixTxt.replace(",", " "); does not work. Searching for a solution...
 	matrix.textContent = matrixTxt;
 }
 
+betNum.matrix = [];
 },
 
 }
