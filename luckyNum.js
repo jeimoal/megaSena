@@ -41,7 +41,8 @@ while (betNum.matrix.length != 6) {
 	betNum.unit = Math.floor(Math.random() * 10);
 	concat = ` ${betNum.dozen}${betNum.unit}`;
 
-	if(concat > 0 && concat <=60) {
+	//validates whether the number is repeated
+	if(concat > 0 && concat <=60 && betNum.matrix.indexOf(concat) == -1) {
 		betNum.matrix.unshift(concat);
 	}
 	matrixTxt = betNum.matrix;
